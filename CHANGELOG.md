@@ -1,3 +1,8 @@
+# HEAD
+
+## Features
+* **scss:** Consume @mozilla-protocol/tokens package (#109)
+
 # 1.0.1
 
 ## Bug Fixes

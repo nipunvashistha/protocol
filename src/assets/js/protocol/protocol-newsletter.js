@@ -8,12 +8,8 @@
         var newsletterForm = document.getElementById('newsletter-form');
         var submitButton = document.getElementById('newsletter-submit');
         var formDetails = document.getElementById('newsletter-details');
-        var formControls = document.querySelectorAll('.mzp-c-newsletter-form input, .mzp-c-newsletter-form select');
-        var formExpanded;
-
-        if (window.getComputedStyle(formDetails).display === 'none') {
-            formExpanded = false;
-        }
+        var emailField = document.querySelector('.mzp-js-email-field');
+        var formExpanded = window.getComputedStyle(formDetails).display === 'none' ? false : true;
 
         function emailFormShowDetails() {
             if (!formExpanded) {
@@ -22,11 +18,9 @@
             }
         }
 
-        for (var i = 0; i < formControls.length; i++) {
-            formControls[i].addEventListener('focus', function() {
-                emailFormShowDetails();
-            }, true);
-        }
+        emailField.addEventListener('focus', function() {
+            emailFormShowDetails();
+        });
 
         submitButton.addEventListener('click', function(e) {
             if (!formExpanded) {
